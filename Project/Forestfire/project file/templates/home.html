@@ -1,0 +1,45 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+<div class="container">
+  <form action="{{ url_for('predict_datapoint')}}" method="post">
+    <p>Algerian Forest Fires Dataset</p>
+    <div class="form">
+      <input class="input"  type="text" name="Temperature" placeholder="Temperature - (22 to 42)" required="required" /><br>
+         <input class="input"  type="text" name="RH" placeholder="RH - (21 to 90)" required="required" /><br>
+         <input class="input"  type="text" name="Ws" placeholder="Ws - (6 to 29)" required="required" /><br>
+         <input class="input"  type="text" name="Rain" placeholder="Rain - (0 to 16.8)" required="required" /><br>
+         <input class="input"  type="text" name="FFMC" placeholder="FFMC - (28.6 to 92.5)" required="required" /><br>
+         <input class="input"  type="text" name="DMC" placeholder="DMC - (1.1 to 65.9)" required="required" /><br>
+         <input class="input"  type="text" name="ISI" placeholder="ISI - (7 to 220.4)" required="required" /><br>
+         <input class="input"  type="text" name="Classes" placeholder="Classes - (Fire (1) and not fire (0))" required="required" /><br>
+         <input class="input"  type="text" name="Region" placeholder="Region - (Bejaia (0) (1)Sidi-Bel Abbes) " required="required" /><br>
+           
+           
+           
+         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br>
+         <span>THE FWI prediction is {{result}}</span>
+      </div>
+
+  </form>
+
+  <div class="drops">
+    <div class="drop drop-1"></div>
+    <div class="drop drop-2"></div>
+    <div class="drop drop-3"></div>
+    <div class="drop drop-4"></div>
+    <div class="drop drop-5"></div>
+  </div>
+</div>
+</body>
+</html>
+
